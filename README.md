@@ -6,3 +6,5 @@ Gemaintainet wird es vom Jano, der das auch alles angefangen und auf Github gest
 Aber Vorsicht: Wenn euer Abschnitt der Story unlustig, langweilig oder aus sonstigen Gründen einfach nur scheiße ist, wird er gnadenlos wieder rausgeschmissen.
 
 Viel Spaß mit meinem kleinen Projekt! :)
+
+PS: Wenn ihr das Spiel unter Windows, Mac oder BSD kompiliert: Her mit des Executables!
