@@ -5,6 +5,7 @@
 void begegnungDerDrittenArt(int*, char**);
 void hoehlenmensch(int*,char**);
 void comingHome(int*,char**);
+void duschen(int*,char**);
 void notImplementedYet(int*);
 
 int main(int argc, char const *argv[])
@@ -53,7 +54,7 @@ int main(int argc, char const *argv[])
 			else if(!strcmp(eingabe,"putin")){
 				printf("Der Bär versucht sich zwar zu wehren, aber du besteigst ihn und unter aterieneinfrierendem Kriegsgebrüll fängst du an, ihn zu reiten. Der Bär trägt dich in einen Wald, der viele Kilometer von deiner Heimat entfernt liegt. Dort fällt er plötzlich tot um, weil sein Blut über die Verletzung am Arm wohl infiziert wurde.");
 				//TODO
-				notImplementedYet(&laeuft);
+				hoehlenmensch(&laeuft,&waffe);
 			}
 			else{
 			  printf("\nKannschtu nich richtik schreibn oda waaas\?\?\?\?!!!!!1111\n");
@@ -80,7 +81,10 @@ int main(int argc, char const *argv[])
 	    else if(waffe[0] == 'k'){
 		printf("\n(h = du ziehst in den Wald und wirst Höhlenmensch, s = du baust dir ein Schlagzeug aus den Mülltonnen deines Nachbars der immer so geheimnisvoll tut und schlägst mit der Keule drauf ein)");
 		scanf(" %s",eingabe);
-		//TODO	
+		if(*eingabe == s){
+                    printf("\nOh yeah, gimme da beat, gimme da beat! Du haust das geilste Schlagzeugsolo seit \"The End\" von den Beatles raus, und fühlst dich wie der Üb0rking. Als du voller Elan mit der Keule auf die Mülltonne schlägst, die das Crash-Becken repräsentiert, führt das dein Solo zu einem bombastische Ende: Offenbar hat dein Nachbar Crystal Meth gekocht und in dieser Mülltonne seine Chemieabfälle aufbewahrt, die nun explodiert sind. Du fühlst dich klein, schwarz und hässlich. Was tust du?");
+                }
+                //TODO	
 		notImplementedYet(&laeuft);
 	    }
 	    else if(waffe[0] == 'n'){
@@ -123,13 +127,7 @@ int main(int argc, char const *argv[])
 	    }
 	    
 	    else if(*eingabe == 'd'){
-		printf("Du machst dich also auf den Weg und suchst nach einer Dusche. Du stellst fest, dass Duschen nicht einfach so in der Gegegend rumstehen und darauf warten, dass du \"e\" drückst um sie zu benutzen. Was tust du also?");
-		while(laeuft){
-			printf("\n(s = du suchst ein Schwimmbad und brichst dort ein, w = du wartest, bis es regnet, f = du gehst zur Feuerwehr)");
-			scanf(" %s", eingabe);		
-			notImplementedYet(&laeuft);
-			//TODO
-		}
+		duschen(&laeuft,&waffe);
 	  }
 	
 	}
@@ -206,11 +204,22 @@ void comingHome(int* laeuft, char** waffe){
 }
 
 void hoehlenmensch(int* laeuft, char** waffe){
-	notImplementedYet(laeuft);
+    //TODO Du kommst hierhin, nachdem der Bär gestorben ist, nachdem du entschlossen hast fernab von jeglicher Technik zu leben und nachdem du Pazifist geworden bis, also denk dir was aus, Katharina! :)
+    notImplementedYet(laeuft);
+}
+
+void duschen(int* laeuft, char** waffe){
+    printf("Du machst dich also auf den Weg und suchst nach einer Dusche. Du stellst fest, dass Duschen nicht einfach so in der Gegegend rumstehen und darauf warten, dass du \"e\" drückst um sie zu benutzen. Was tust du also?");
+    while(laeuft){
+        printf("\n(s = du suchst ein Schwimmbad und brichst dort ein, w = du wartest, bis es regnet, f = du gehst zur Feuerwehr)");
+        scanf(" %s", eingabe);		
+	notImplementedYet(&laeuft);
+	//TODO
+    }
 }
 
 void notImplementedYet(int* laeuft){
 	
-	printf("\nJa, tut mir leid, aber leider ist das Programm hier zuende. Das liegt daran, dass der Jano zu faul war hier weiterzuprogrammieren. Du, als enttäuschter und geprellter Nutzer, kannst jetzt folgendes tun: \n\n 1. Du trittst dem Jano in den Arsch, dass er das gefälligst fertig programmieren soll. \n\n 2. Du beteiligst dich selbst am Projekt und führst es weiter. Dafür gehst du einfach auf https://github.com/janopae/text-adventschar und programmierst an irgendeiner Stelle in der main.c weiter, an der //TODO steht.\n");
+	printf("\nJa, tut mir leid, aber leider ist das Programm hier zuende. Das liegt daran, dass der Jano zu faul war hier weiterzuprogrammieren (#dankeNils). Du, als enttäuschter und geprellter Nutzer, kannst jetzt folgendes tun: \n\n 1. Du trittst dem Jano in den Arsch, dass er das gefälligst fertig programmieren soll. \n\n 2. Du beteiligst dich selbst am Projekt und führst es weiter. Dafür gehst du einfach auf https://github.com/janopae/text-adventschar und programmierst an irgendeiner Stelle in der main.c weiter, an der //TODO steht.\n");
 	*laeuft = 0;
 }
