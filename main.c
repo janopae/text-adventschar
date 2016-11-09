@@ -211,6 +211,6 @@ void hoehlenmensch(int* laeuft, char** waffe){
 
 void notImplementedYet(int* laeuft){
 	
-	printf("\nJa, tut mir leid, aber leider ist das Programm hier zuende. Das liegt daran, dass der Jano zu faul war hier weiterzuprogrammieren. Du, als enttäuschter und geprellter Nutzer, kannst jetzt folgendes tun: \n\n 1. Du trittst dem Jano in den Arsch, dass er das gefälligst fertig programmieren soll. \n\n 2. Du beteiligst dich selbst am Projekt und führst es weiter. Dafür gehst du einfach auf github.com/... Ach ja, Notiz an mich selbst: Das Programm auf Github stellen!\n");
+	printf("\nJa, tut mir leid, aber leider ist das Programm hier zuende. Das liegt daran, dass der Jano zu faul war hier weiterzuprogrammieren. Du, als enttäuschter und geprellter Nutzer, kannst jetzt folgendes tun: \n\n 1. Du trittst dem Jano in den Arsch, dass er das gefälligst fertig programmieren soll. \n\n 2. Du beteiligst dich selbst am Projekt und führst es weiter. Dafür gehst du einfach auf https://github.com/janopae/text-adventschar und programmierst an irgendeiner Stelle in der main.c weiter, an der //TODO steht.\n");
 	*laeuft = 0;
 }
