@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-void begegnungDerDrittenArt(int*, char**);
-void hoehlenmensch(int*,char**);
-void comingHome(int*,char**);
-void duschen(int*,char**);
-void notImplementedYet(int*);
+#include "main.h"
 
 int main(int argc, char const *argv[])
 {
@@ -53,9 +48,10 @@ int main(int argc, char const *argv[])
 			}
 			else if(!strcmp(eingabe,"putin")){
 				printf("Der Bär versucht sich zwar zu wehren, aber du besteigst ihn und unter aterieneinfrierendem Kriegsgebrüll fängst du an, ihn zu reiten. Der Bär trägt dich in einen Wald, der viele Kilometer von deiner Heimat entfernt liegt. Dort fällt er plötzlich tot um, weil sein Blut über die Verletzung am Arm wohl infiziert wurde.");
-				//TODO
+				
 				hoehlenmensch(&laeuft,&waffe);
 			}
+			//TODO
 			else{
 			  printf("\nKannschtu nich richtik schreibn oda waaas\?\?\?\?!!!!!1111\n");
 			  
@@ -79,14 +75,36 @@ int main(int argc, char const *argv[])
 		notImplementedYet(&laeuft);
 	    }
 	    else if(waffe[0] == 'k'){
-		printf("\n(h = du ziehst in den Wald und wirst Höhlenmensch, s = du baust dir ein Schlagzeug aus den Mülltonnen deines Nachbars der immer so geheimnisvoll tut und schlägst mit der Keule drauf ein)");
-		scanf(" %s",eingabe);
-		if(*eingabe == s){
-                    printf("\nOh yeah, gimme da beat, gimme da beat! Du haust das geilste Schlagzeugsolo seit \"The End\" von den Beatles raus, und fühlst dich wie der Üb0rking. Als du voller Elan mit der Keule auf die Mülltonne schlägst, die das Crash-Becken repräsentiert, führt das dein Solo zu einem bombastische Ende: Offenbar hat dein Nachbar Crystal Meth gekocht und in dieser Mülltonne seine Chemieabfälle aufbewahrt, die nun explodiert sind. Du fühlst dich klein, schwarz und hässlich. Was tust du?");
+                while(laeuft){
+                    printf("\n(h = du ziehst in den Wald und wirst Höhlenmensch, s = du baust dir ein Schlagzeug aus den Mülltonnen deines Nachbars der immer so geheimnisvoll tut und schlägst mit der Keule drauf ein)");
+                    scanf("%s",eingabe);
+                    if(*eingabe == 's'){
+                        while(laeuft){
+                            printf("\nOh yeah, gimme da beat, gimme da beat! Du haust das geilste Schlagzeugsolo seit \"The End\" von den Beatles raus, und fühlst dich wie der Üb0rking. Als du voller Elan mit der Keule auf die Mülltonne schlägst, die das Crash-Becken repräsentiert, führt das dein Solo zu einem bombastische Ende: Offenbar hat dein Nachbar Crystal Meth gekocht und in dieser Mülltonne seine Chemieabfälle aufbewahrt, die nun explodiert sind. Du fühlst dich klein, schwarz und hässlich. Was tust du? \n\n (t = du verlierst den Glauben an die Technik und entschließt dich, ein Leben fernab der Zivilisation zu führen, d = duschen)");
+                            scanf(" %s",eingabe);
+                            
+                            if(*eingabe == 't'){
+                                printf("\nDiese Chemie-Explosion hätte dich umbringen können. Diese moderne Technik ist unberechenbar. Du stellst fest, dass du von Technik umgeben bis: Woher weißt du, was passiert, wenn du den Ampel-Knopf drückst? Vielleicht wir die Ampel grün, vielleicht ist sie aber auch manipuliert und sendet deine Metadaten an die NSA, die dann wissen, wo du bist und dass du über die Straße wolltest!!! Oder sie wird lila. Das ist dir zu viel Risiko, also beschließt du, in einen nahgelegenen Wald zu ziehen und dort ein Leben in Einklang mit der Natur zu führen. \n");
+                                hoehlenmensch(&laeuft,&waffe);
+                            }
+                            else if(*eingabe == 'd'){
+                                while(laeuft){
+                                    printf("Dein Haus sieht ziemlich verseucht aus. Sicher, dass du da zum Duschen rein willst? \n(j = ja, n = nein ich such mir eine andere Möglichkeit zu duschen)");
+                                    scanf(" %s",eingabe);
+                                    if(*eingabe == 'j')
+                                        comingHome(&laeuft,&waffe);
+                                    else if(*eingabe == 'n')
+                                        duschen(&laeuft,&waffe);
+                                        
+                                }
+                            }
+                        }
+                    }
+                    else if(*eingabe == 'h')
+                        hoehlenmensch(&laeuft, &waffe);
+                
                 }
-                //TODO	
-		notImplementedYet(&laeuft);
-	    }
+                }
 	    else if(waffe[0] == 'n'){
 		printf("\n(e = Nutella aufessen, p = du wirst paranoid, verbarrikadierst dich und verehrst die Nutella als heiligen Gral)");
 		//TODO
@@ -192,15 +210,17 @@ void begegnungDerDrittenArt(int* laeuft, char** waffe){
 
 void comingHome(int* laeuft, char** waffe){
 	char* eingabe;
-	printf("\n\nZuhause angekommen stellst du fest, dass deine Wohnung von mutierten Killerameisen übernommen wurde, die Knochen als Kopfschmuck tragen und auch sonst dem antiquitierten Klischee des wilden Negers entsprechen. Was tust du? \n\n (k = versuchen, mit den Ameisen auf Negerisch zu kommunizieren, ");
-	if(**waffe == 'n')
-            printf("n = du versuchst, sie mit der Nutella wegzulocken, ");
-        else if(**waffe == 'k')
-            printf("s = mit der Keule auf die Viecher einschlagen, ");
-	printf("u = umziehen)");
-	scanf(" %s",eingabe);	
-	notImplementedYet(laeuft);
-	//TODO
+        while(*laeuft){
+            printf("\n\nZuhause angekommen stellst du fest, dass deine Wohnung von mutierten Killerameisen übernommen wurde, die Knochen als Kopfschmuck tragen und auch sonst dem antiquitierten Klischee des wilden Negers entsprechen. Was tust du? \n\n (k = versuchen, mit den Ameisen auf Negerisch zu kommunizieren, ");
+            if(**waffe == 'n')
+                printf("n = du versuchst, sie mit der Nutella wegzulocken, ");
+            else if(**waffe == 'k')
+                printf("s = mit der Keule auf die Viecher einschlagen, ");
+            printf("u = umziehen)");
+            scanf(" %s",eingabe);	
+            notImplementedYet(laeuft);
+            //TODO
+        }
 }
 
 void hoehlenmensch(int* laeuft, char** waffe){
@@ -209,11 +229,12 @@ void hoehlenmensch(int* laeuft, char** waffe){
 }
 
 void duschen(int* laeuft, char** waffe){
+    char* eingabe; 
     printf("Du machst dich also auf den Weg und suchst nach einer Dusche. Du stellst fest, dass Duschen nicht einfach so in der Gegegend rumstehen und darauf warten, dass du \"e\" drückst um sie zu benutzen. Was tust du also?");
-    while(laeuft){
+    while(*laeuft){
         printf("\n(s = du suchst ein Schwimmbad und brichst dort ein, w = du wartest, bis es regnet, f = du gehst zur Feuerwehr)");
         scanf(" %s", eingabe);		
-	notImplementedYet(&laeuft);
+	notImplementedYet(laeuft);
 	//TODO
     }
 }
