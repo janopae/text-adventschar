@@ -67,7 +67,13 @@ int main(int argc, char const *argv[])
 	      printf("\nDu wähltest die stärkste aller Waffen. Geh hin und gebrauche sie weise.");
 	      while(laeuft){
 		printf("\n(s = du posierst mit der Waffe für ein Selfie, indem du dir die Waffe an den Kopf hälst, d = du ziehst dich nackt aus, rennst aufs Dach und schießt in den Himmel bis sämtliche Munition verbraucht ist, e = du erkennst, dass Waffen nur Leid verursachen und dass alles Schlechte in der Welt von Waffen verursacht wurde (nicht von ihren Besitzern) und wirst Pazifist, k = du nimmst die Waffe auseinander, bastelst aus ihren Einzelteilen eine Installation und stellst diese in ein Museum neben namhafte Größen der Kunsthistorie)");
-		//TODO
+		scanf(" %s", eingabe);
+                if(*eingabe == 's'){
+                    while(laeuft){
+                        printf("Du zückst also dein Handy, machst ein Duckface und drückst ab. Mit deinem Handy. Du stellst fest, dass das Bild nicht deine Schokoladenseite zeigt, positionierst die Waffe noch etwas besser und drückst ab. Diesmal mit der Waffe.\n\n In der Waffe war allerdings keine Munition mehr drin, weswegen du jetzt glücklich bist. ");
+                    }
+                }
+                //TODO
 		notImplementedYet(&laeuft);
 		
 	      }
@@ -199,6 +205,12 @@ void begegnungDerDrittenArt(int* laeuft, char** waffe){
 			else if(*eingabe == 'h' && **waffe == 'p'){
 				//TODO
 			}
+			else if(*eingabe == 'c'){
+                            //TODO
+                        }
+                        else if(*eingabe == 't'){
+                            //TODO
+                        }
 			
 			notImplementedYet(laeuft);
 			//TODO
